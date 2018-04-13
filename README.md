@@ -32,3 +32,37 @@ Then go ahead by adding missing components/software manually to continue the ins
 4.	Click Next
 5.	Turn On/Of the features under Windows Features screen as per the installation requirements. 
 
+
+
+
+
+
+
+
+
+## SamplePoseidonApp.module.ts:
+
+'''
+module SamplePoseidonApp {
+
+    function registerApplicationState($stateProvider: ng.ui.IStateProvider) {
+        $stateProvider.state('6cebe3af-27de-4304-9a66-7cfa105f278d', {
+            url: '/SamplePoseidonApp',
+            templateUrl: '/SamplePoseidonApp/mainView.html'
+        });
+    }
+
+    function registerMenuItems(navigationService: Poseidon.INavigationService) {
+        var appMenu = new Poseidon.NavigationItem('6cebe3af-27de-4304-9a66-7cfa105f278d', '6cebe3af-27de-4304-9a66-7cfa105f278d', null, 'SamplePoseidonApp.Title');
+
+        // add subitems to the application menu item
+        //appMenu.add(new Poseidon.NavigationItem(<menu item id>, <menu item state>, <menu item icon>, <menu item label>));
+
+        // register the application menu item with the navigation service
+        navigationService.registerApplication(appMenu);
+    }
+
+    angular.module('SamplePoseidonApp', ['Poseidon'])
+        .config(registerApplicationState)
+        .run(registerMenuItems);
+'''
