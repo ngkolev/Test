@@ -38,8 +38,6 @@ Then go ahead by adding missing components/software manually to continue the ins
 
 
 
-
-
 ## SamplePoseidonApp.module.ts:
 
 ```
@@ -66,3 +64,14 @@ module SamplePoseidonApp {
         .config(registerApplicationState)
         .run(registerMenuItems);
 ```
+
+
+
+
+
+
+
+
+
+
+
