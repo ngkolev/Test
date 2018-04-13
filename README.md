@@ -42,7 +42,7 @@ Then go ahead by adding missing components/software manually to continue the ins
 
 ## SamplePoseidonApp.module.ts:
 
-'''
+```
 module SamplePoseidonApp {
 
     function registerApplicationState($stateProvider: ng.ui.IStateProvider) {
@@ -65,4 +65,4 @@ module SamplePoseidonApp {
     angular.module('SamplePoseidonApp', ['Poseidon'])
         .config(registerApplicationState)
         .run(registerMenuItems);
-'''
+```
