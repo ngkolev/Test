@@ -1,11 +1,11 @@
-#Installing Platform Application
+# Installing Platform Application
 
 This section explains how to install and deploy Platform application in your Windows system. During Installation, the setup program walks you through following stages:
 
-•Before you Begin
-*Enable IIS Routing
-*Download and install MS SQL Server
-*Installation and configuration 
+.Before you Begin
+.Enable IIS Routing
+.Download and install MS SQL Server
+.Installation and configuration 
 
 ##Before you begin
 
