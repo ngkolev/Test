@@ -7,7 +7,7 @@ This section explains how to install and deploy Platform application in your Win
 .Download and install MS SQL Server
 .Installation and configuration 
 
-##Before you begin
+## Before you begin
 
 Before you begin the installation process, the setup runs a prerequisites check in the target system to ensure that it meets all the requirements of the installation and configuration of Application Framework and GST Package.
 1.	Locate the installation file folder in your system and select the Setup folder from the Drop folder to begin installation.
@@ -15,7 +15,7 @@ Before you begin the installation process, the setup runs a prerequisites check 
 
 Once the installation process begins, the setup will check the status of prerequisites in your system.
 
-Setup Prerequisites
+## Setup Prerequisites
 
 You can see what is missing from the necessary prerequisites under Check setup perquisites screen, see the sample image below:
 
