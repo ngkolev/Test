@@ -1,13 +1,13 @@
-Install and Deploy Platform Application
+#Installing Platform Application
 
 This section explains how to install and deploy Platform application in your Windows system. During Installation, the setup program walks you through following stages:
 
-•	Before you Begin
-	Enable IIS Routing
-	Download and install MS SQL Server
-•	Installation and configuration 
+•Before you Begin
+*Enable IIS Routing
+*Download and install MS SQL Server
+*Installation and configuration 
 
-Before you begin
+##Before you begin
 
 Before you begin the installation process, the setup runs a prerequisites check in the target system to ensure that it meets all the requirements of the installation and configuration of Application Framework and GST Package.
 1.	Locate the installation file folder in your system and select the Setup folder from the Drop folder to begin installation.
