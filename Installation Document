@@ -1,0 +1,180 @@
+Introduction Application Framework (Platform)
+Application Framework is an open and collaborative digital ecosystem platform. The purpose of this platform is to enable continuous access to data, both on-board and ashore, through an interactive web based solution and to provide an efficient information flow.
+
+Application Framework plays a vital part in creating the full picture of an on-going operation by collecting data from systems and sensors on-board, distributing them in the right format to fleet management offices and/or suppliers support systems. The platform provides a complete and up-to-date information portal for better traceability and quality of communication between offshore and onshore organizations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Install and Deploy Platform Application
+
+This section explains how to install and deploy Platform application in your Windows system. During Installation, the setup program walks you through following stages:
+
+•	Before you Begin
+	Enable IIS Routing
+	Download and install MS SQL Server
+•	Installation and configuration 
+
+Before you begin
+
+Before you begin the installation process, the setup runs a prerequisites check in the target system to ensure that it meets all the requirements of the installation and configuration of Application Framework and GST Package.
+1.	Locate the installation file folder in your system and select the Setup folder from the Drop folder to begin installation.
+2.	Run Setup.exe 
+
+Once the installation process begins, the setup will check the status of prerequisites in your system.
+
+Setup Prerequisites
+
+You can see what is missing from the necessary prerequisites under Check setup perquisites screen, see the sample image below:
+
+ 
+You can manually install the components required for the setup based on the information displayed During Check Setup Prerequisites. The steps to install the missing component are given below. Refer : 
+  
+3.	Run InstallIIS10.bat file to enable necessary Windows Features. 
+
+Note- The IsntallIIS10.bat file is best suited to Windows10, however,  to access the  installation files for Windows 7 and Windows 8, Click here: 
+-Or-
+
+You can also check this status manually by using “Check Setup Prerequisites” option on the left menu under Setup steps, (See the image above), or by clicking on Check button at the bottom of the screen. 
+Then go ahead by adding missing components/software manually to continue the installation process.
+4.	Click Next
+5.	Turn On/Of the features under Windows Features screen as per the installation requirements. 
+
+  
+
+Install the Application Request Router and URL rewrite located in drop/setup/Setups/IIS folder.
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Enable IIS application request routing
+1.	Open Internet Information Services (IIS) Manager.  
+ 
+
+Enable proxy in the Application Request Routing -> Server Proxy Settings by selecting “Enable proxy”. 
+
+
+ 
+ 
+
+Download and install MS SQL Server
+
+1.	Select “New SQL Server stand-alone installation” from SQL Server Installation Center.
+
+Note- The supported version for SQL server is 2008 R2 and above. You can also download the latest version of SQL server here:  
+here https://www.microsoft.com/en-us/sql-server/sql-server-downloads
+
+2.	Use default setting and click Next until you get to the “Server Configuration” page. 
+
+At the Server configuration page, you can check startup type of SQL Server Browser to be Automatic.
+3.	Click Next and at “Database Engine Configuration” step check “Mix Mode (SQL Server authentication and Windows authentication)”.
+
+4.	Enter password and click Next until the end of installation process.
+
+ 
+
+5.	Open “SQL Server Configuration Manager” and go to Protocols for SQLEXPRESS (default SQL instance created by the previous step). Make sure that Named Pipes and TCP/IP protocols are enabled:
+
+ 
+
+
+Installation and configuration 
+6.	Go back to the installation click Next till you reach Application Selection.
+7.	Select following options under Publish Zone and Server Zone from Application Selection section page:
+•	“Create Platform Database” 
+•	“Install IIS and IIS Modules” 
+•	“Install IIS”
+•	 “Module Installer” 
+•	“Platform Website” 
+
+
+ 
+
+6.	Click Next.
+7.	On the next page “Install Kongsberg Module Installer”, enter the “http://localhost “ as Platform Base address and Application Server Base Address.
+Note- Make sure that you type same address “http://localhost” in both the fields as shown in the sample image below:
+
+ 
+8.	Click Next.
+9.	The Next step is “Create Platform Database” where you need to enter database connection details:
+  
+Note- Make sure that it should correspond to the installed instance of the SQL Server with user name and password. The database name will be created according to the name filled in DB Name in the textbox:
+
+ 
+
+The values shown in the image above are just the samples. It is not recommended to use the “sa” user. Make sure you enter the correct DB server name and its credentials as installed in your local system.
+
+10.	In the next step “Install Platform Website”, the database the fields should be same as provided in the previous two steps. You have to change only the Web site port number:
+
+ 
+11.	Click Next and review the entered configurations.
+12.	Click Finish after a successful configuration.
+13.	Click Install.
+14.	If everything is ok, you will see the message “Installation finished successfully”.
+
+ 
+
+
+Configuring Poseidon.Module.Installer.config file
+
+15.	Now go to Kongsberg Digital Application Framework installation directory
+and locate the Platform folder and Open Poseidon.Module.Installer.exe.config in some text editor. Then change the value of key poseidon:defaultServerAddress to “http://localhost:8080”:
+(Refer the image below)
+
+ 
+
+16.	Now open the Setup.exe again and navigate to “Application Selection” page. 
+
+17.	Check “Components”, “Dashboards Client”, “Dashboards Instruments”, “Dashboards Service” and “External Library”. 
+18.	Click Next until you get to “Edit Dashboards Service Configuration” page and fill in connection string to the created database as follows. 
+
+Here there is one more configuration – Service Bus Server Address. It should be the public IPv4 localhost address:
+
+Tip: The Public IPv4 local host address refers to the IP address of your local machine. You can find out the IP address of your local system using CLI or https://whatismyipaddress.com site.
+ 
+19.	Click Next and Review the entered configurations.
+20.	Click Finish.
+21.	Click Install.
+22.	If everything is ok then you will see the message “Installation finished successfully”.
+
+
+  
+
+Deployment 
+23.	Now open a web browser and navigate to http://localhost:8080
+24.	Enter the default username  and password  and navigate to Tools -> Dashboards -> New Dashboard:
+  
+
+You will see the main navigational menu with your ‘New Dashboard” under Dashboards menu.
