@@ -40,7 +40,7 @@ Then go ahead by adding missing components/software manually to continue the ins
 
 ## SamplePoseidonApp.module.ts:
 
-```
+```typescript
 module SamplePoseidonApp {
 
     function registerApplicationState($stateProvider: ng.ui.IStateProvider) {
